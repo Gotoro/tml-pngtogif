@@ -22,7 +22,7 @@ python main.py IMAGE_NAME.png (optional)NUMBER_OF_FRAMES
 ```
 The new gif should appear in the same directory under the same name as the image.
 
-**Scripts determines the number of frames automatically. If it fails, you can always specify the NUMBER_OF_FRAMES yourself.**
+**Scripts determines the number of frames automatically.** If it fails, you can always specify the **NUMBER_OF_FRAMES** yourself.
 
 For example, the image at the top has 7 frames, so to specify the number of frames do
 ```python
