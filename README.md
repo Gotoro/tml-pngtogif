@@ -36,3 +36,9 @@ The script has commented line
 Uncommenting it will make the script create, in addition to generating the gif, all the frames that it used.
 
 For example, it will create 7 images AkumuMirror0-6.png for the example at the top. Useful if you want to extract the individual frames.
+
+### Duration of the gif frame
+You can specify the duration of how long each gif frame should stay up for in the script. 
+
+Change the ```duration=80``` in the last line of the script, in milliseconds.
+Useful if the resulting gif is too slow or too fast.
