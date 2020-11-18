@@ -7,7 +7,7 @@ onFrame = False
 frames = 0
 gifout = []
 
-# depending on incoming arguments, script will do thins differently
+# depending on incoming arguments, script will do things differently
 if len(sys.argv) == 2:
     imagename = sys.argv[-1]
 elif len(sys.argv) == 3:
