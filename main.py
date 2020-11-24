@@ -22,17 +22,26 @@ if len(sys.argv) == 2:
         for pxX in range(im.size[0]):
             if pxX == (im.size[0]-1) and onFrame == True:
                 onFrame = False
-            if im.getpixel((pxX, pxY)) == 255:
-                continue
-            else:
-                if onFrame == False:
-                    frames += 1
-                    onFrame = True
-                    break
+            if type(im.getpixel((pxX, pxY))) == tuple:
+                if im.getpixel((pxX, pxY))[-1] == 0:
+                    continue
                 else:
-                    break
-        if pxX == im.size[0] and onFrame == True:
-            onFrame == False
+                    if onFrame == False:
+                        frames += 1
+                        onFrame = True
+                        break
+                    else:
+                        break
+            elif type(im.getpixel((pxX, pxY))) == int:
+                if im.getpixel((pxX, pxY)) == 255:
+                    continue
+                else:
+                    if onFrame == False:
+                        frames += 1
+                        onFrame = True
+                        break
+                    else:
+                        break
 
 # constructing the .gif
 heightdiv = im.size[1]/frames
@@ -44,5 +53,5 @@ for i in range(frames):
     regionname = imagename
     regionname = regionname.split(".")
     regionname = regionname[0]
-    #region.save(regionname + str(i) + ".png")
+   # region.save(regionname + str(i) + ".png")
 gifout[0].save(regionname + ".gif", save_all=True, append_images=gifout[1:], optimize=False, duration=80, loop=0, disposal=2) # disposal SUPER important
